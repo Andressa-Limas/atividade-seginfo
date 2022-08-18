@@ -1,0 +1,16 @@
+extends base
+    
+block content
+    h1= title
+    div 
+        form(action="", method="post")
+            div
+                label(for='description') Aviso:
+                input#description(type='text', name='description' required='true' value=(undefined===warning ? '' : warning.description) )
+                input(type="hidden", name="_csrf",  value=csrfToken)
+                button(type='submit') Salvar
+
+    br
+    div 
+        a(href="/warnings") Voltar 
+    
